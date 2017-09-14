@@ -1,0 +1,30 @@
+#druid连接池的配置
+druid:
+  initialSize: 5
+  minIdle: 5
+  maxActive: 20
+  maxWait: 60000
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 300000
+  validationQuery: SELECT 1 FROM DUAL
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  poolPreparedStatements: true
+  maxPoolPreparedStatementPerConnectionSize: 20
+  filters: stat,wall,log4j
+  connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  useGlobalDataSourceStat: true
+
+#数据源的配置
+datasource:
+  slave:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.17.69.79:3406/spring-test
+    username: user_app_moyun_dev
+    password: victory@17
+  master:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring-test
+    username: root
+    password: root
