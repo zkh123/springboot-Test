@@ -40,7 +40,7 @@ public class HelloWorldControllerTest {
 
     @Test
     public void getHello() throws Exception {
-        String param = "黄李俊";
+        String param = "黄----李";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON_UTF8).param("username",param))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())
@@ -53,7 +53,7 @@ public class HelloWorldControllerTest {
     @Test
     public void postHello() throws Exception {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("key","拍拍贷");
+        jsonObject.put("key","拍---***贷");
         String param = JSONObject.toJSONString(jsonObject);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post("/hello").accept(MediaType.APPLICATION_JSON_UTF8).content(param))
                 .andExpect(MockMvcResultMatchers.status().isOk())

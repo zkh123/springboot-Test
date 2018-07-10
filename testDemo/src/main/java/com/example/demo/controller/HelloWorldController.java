@@ -36,6 +36,6 @@ public class HelloWorldController {
 
     @RequestMapping("get")
     public String get(){
-        return "拍拍贷";
+        return "拍0000贷sdfsdgf";
     }
 }
